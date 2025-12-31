@@ -1,18 +1,27 @@
 /* EarthScape Design System */
 :root {
-    --bg-primary: #0f172a;    /* Slate 900 */
-    --bg-secondary: #1e293b;  /* Slate 800 */
-    --bg-card: rgba(30, 41, 59, 0.7); /* Glassmorphism base */
-    
-    --text-primary: #f8fafc;  /* Slate 50 */
-    --text-secondary: #94a3b8; /* Slate 400 */
-    
-    --accent-primary: #10b981; /* Emerald 500 */
-    --accent-hover: #059669;   /* Emerald 600 */
-    --accent-danger: #ef4444;  /* Red 500 */
-    
-    --border-color: #334155;   /* Slate 700 */
-    
+    --bg-primary: #0f172a;
+    /* Slate 900 */
+    --bg-secondary: #1e293b;
+    /* Slate 800 */
+    --bg-card: rgba(30, 41, 59, 0.7);
+    /* Glassmorphism base */
+
+    --text-primary: #f8fafc;
+    /* Slate 50 */
+    --text-secondary: #94a3b8;
+    /* Slate 400 */
+
+    --accent-primary: #10b981;
+    /* Emerald 500 */
+    --accent-hover: #059669;
+    /* Emerald 600 */
+    --accent-danger: #ef4444;
+    /* Red 500 */
+
+    --border-color: #334155;
+    /* Slate 700 */
+
     --font-main: 'Outfit', sans-serif;
 }
 
@@ -33,7 +42,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
@@ -84,38 +98,53 @@ nav .nav-container {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    /* Ensure vertical alignment */
     gap: 1.5rem;
+    /* Restore spacing */
 }
 
 nav a.nav-link {
     color: var(--text-secondary);
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    /* Align text within link */
 }
 
-nav a.nav-link:hover, nav a.nav-link.active {
+nav a.nav-link:hover,
+nav a.nav-link.active {
     color: var(--text-primary);
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.25rem;
+    /* Adjusted padding */
     border-radius: 0.5rem;
     font-weight: 600;
     cursor: pointer;
     border: none;
     transition: all 0.2s;
     text-align: center;
+    line-height: normal;
+    /* Allow natural font height for better centering */
+    vertical-align: middle;
 }
 
 .btn-primary {
     background-color: var(--accent-primary);
-    color: #fff;
+    color: #ffffff !important;
+    /* Force white text for contrast */
 }
 
 .btn-primary:hover {
     background-color: var(--accent-hover);
     transform: translateY(-1px);
+    color: #ffffff !important;
 }
 
 /* Forms */
