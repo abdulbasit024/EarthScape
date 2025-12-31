@@ -14,7 +14,8 @@ class User(UserMixin, db.Model):
     role = db.Column(db.String(20), default='analyst') # 'admin' or 'analyst'
 
     def set_password(self, password):
-        self.password_hash = generating_password_hash(password)
+        # use werkzeug.security.generate_password_hash to store hashed password
+        self.password_hash = generate_password_hash(password)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
