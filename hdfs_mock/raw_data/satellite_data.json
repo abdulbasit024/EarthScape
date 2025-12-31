@@ -1,0 +1,302 @@
+[
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-27T18:36:30.836580",
+        "CloudCover": 80.79,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-27T19:36:30.836580",
+        "CloudCover": 73.9,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-27T20:36:30.836580",
+        "CloudCover": 16.03,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-27T21:36:30.836580",
+        "CloudCover": 5.3,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-27T22:36:30.836580",
+        "CloudCover": 7.56,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-27T23:36:30.836580",
+        "CloudCover": 36.66,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T00:36:30.836580",
+        "CloudCover": 9.08,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T01:36:30.836580",
+        "CloudCover": 96.0,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T02:36:30.836580",
+        "CloudCover": 62.72,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T03:36:30.836580",
+        "CloudCover": 20.82,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T04:36:30.836580",
+        "CloudCover": 68.19,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T05:36:30.836580",
+        "CloudCover": 56.68,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T06:36:30.836580",
+        "CloudCover": 32.62,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T07:36:30.836580",
+        "CloudCover": 92.04,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T08:36:30.836580",
+        "CloudCover": 76.45,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T09:36:30.836580",
+        "CloudCover": 9.07,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T10:36:30.836580",
+        "CloudCover": 15.25,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T11:36:30.836580",
+        "CloudCover": 20.43,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T12:36:30.836580",
+        "CloudCover": 70.25,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T13:36:30.836580",
+        "CloudCover": 49.06,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T14:36:30.836580",
+        "CloudCover": 98.55,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T15:36:30.836580",
+        "CloudCover": 97.86,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T16:36:30.836580",
+        "CloudCover": 2.58,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T17:36:30.836580",
+        "CloudCover": 64.53,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T18:36:30.836580",
+        "CloudCover": 16.0,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T19:36:30.836580",
+        "CloudCover": 16.34,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-28T20:36:30.836580",
+        "CloudCover": 87.33,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T21:36:30.836580",
+        "CloudCover": 20.56,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-28T22:36:30.836580",
+        "CloudCover": 93.81,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-28T23:36:30.836580",
+        "CloudCover": 4.33,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-29T00:36:30.836580",
+        "CloudCover": 8.28,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T01:36:30.836580",
+        "CloudCover": 12.73,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T02:36:30.836580",
+        "CloudCover": 57.07,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T03:36:30.836580",
+        "CloudCover": 14.51,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T04:36:30.836580",
+        "CloudCover": 1.75,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T05:36:30.836580",
+        "CloudCover": 39.81,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T06:36:30.836580",
+        "CloudCover": 17.38,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T07:36:30.836580",
+        "CloudCover": 75.23,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T08:36:30.836580",
+        "CloudCover": 92.37,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T09:36:30.836580",
+        "CloudCover": 74.34,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-29T10:36:30.836580",
+        "CloudCover": 38.26,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T11:36:30.836580",
+        "CloudCover": 94.46,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T12:36:30.836580",
+        "CloudCover": 66.74,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-B",
+        "Timestamp": "2025-11-29T13:36:30.836580",
+        "CloudCover": 44.05,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T14:36:30.836580",
+        "CloudCover": 33.94,
+        "Region": "East"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-29T15:36:30.836580",
+        "CloudCover": 97.09,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T16:36:30.836580",
+        "CloudCover": 38.8,
+        "Region": "North"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-29T17:36:30.836580",
+        "CloudCover": 46.23,
+        "Region": "South"
+    },
+    {
+        "SatelliteID": "SAT-C",
+        "Timestamp": "2025-11-29T18:36:30.836580",
+        "CloudCover": 54.01,
+        "Region": "West"
+    },
+    {
+        "SatelliteID": "SAT-A",
+        "Timestamp": "2025-11-29T19:36:30.836580",
+        "CloudCover": 32.79,
+        "Region": "South"
+    }
+]

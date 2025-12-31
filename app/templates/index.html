@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome, {{ current_user.username }}!</h1>
+<p>Role: {{ current_user.role }}</p>
+
+<div class="dashboard-section">
+    <h3>Climate Dashboard</h3>
+    <p>Real-time data and analysis.</p>
+    <div style="height: 400px; width: 800px;">
+        <canvas id="climateChart"></canvas>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('{{ url_for("main.climate_data") }}')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('climateChart').getContext('2d');
+
+                const histDates = data.historical.map(d => d.Date);
+                const histTemps = data.historical.map(d => d.AverageTemperature);
+
+                const predDates = data.predictions.map(d => d.date);
+                const predTemps = data.predictions.map(d => d.predicted_temp);
+
+                const labels = [...histDates, ...predDates];
+
+                // Pad historical data with nulls for prediction part
+                const histDataPadded = [...histTemps, ...Array(predDates.length).fill(null)];
+
+                // Pad prediction data with nulls for historical part
+                // To make lines connect, we might want the last historical point to be the first prediction point, 
+                // but for simplicity, we'll just leave a gap or user can handle it.
+                const predDataPadded = [...Array(histDates.length).fill(null), ...predTemps];
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Historical Temperature (°C)',
+                            data: histDataPadded,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            tension: 0.1
+                        }, {
+                            label: 'Predicted Temperature (°C)',
+                            data: predDataPadded,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderDash: [5, 5],
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Temperature Trends & Forecast'
+                            }
+                        }
+                    }
+                });
+            });
+    });
+</script>
+{% endblock %}
