@@ -1,19 +1,41 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome, {{ current_user.username }}!</h1>
-<p>Role: {{ current_user.role }}</p>
+<div class="dashboard-header" style="margin-bottom: 2rem;">
+    <h1>Welcome, {{ current_user.username }}</h1>
+    <p style="color: var(--text-secondary);">Here is your climate data overview.</p>
+</div>
 
-<div class="dashboard-section">
-    <h3>Climate Dashboard</h3>
-    <p>Real-time data and analysis.</p>
-    <div style="height: 400px; width: 800px;">
-        <canvas id="climateChart"></canvas>
+<div class="dashboard-grid">
+    <!-- Status Card -->
+    <div class="card">
+        <h3>User Status</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Current Role: <strong>{{ current_user.role|title
+                }}</strong></p>
+        <p>Access Level: <span style="color: var(--accent-primary);">Active</span></p>
+    </div>
+
+    <!-- Quick Stats (Placeholder) -->
+    <div class="card">
+        <h3>System Status</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Database Connectivity</p>
+        <p style="color: var(--accent-primary);">Operational</p>
+    </div>
+
+    <!-- Main Chart Section -->
+    <div class="card" style="grid-column: 1 / -1;">
+        <h3>Global Temperature Analysis</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Historical data combined with ML-powered
+            predictions.</p>
+        <div class="chart-container">
+            <canvas id="climateChart"></canvas>
+        </div>
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Fetch data
         fetch('{{ url_for("main.climate_data") }}')
             .then(response => response.json())
             .then(data => {
@@ -21,47 +43,83 @@
 
                 const histDates = data.historical.map(d => d.Date);
                 const histTemps = data.historical.map(d => d.AverageTemperature);
-
                 const predDates = data.predictions.map(d => d.date);
                 const predTemps = data.predictions.map(d => d.predicted_temp);
 
                 const labels = [...histDates, ...predDates];
-
-                // Pad historical data with nulls for prediction part
                 const histDataPadded = [...histTemps, ...Array(predDates.length).fill(null)];
-
-                // Pad prediction data with nulls for historical part
-                // To make lines connect, we might want the last historical point to be the first prediction point, 
-                // but for simplicity, we'll just leave a gap or user can handle it.
                 const predDataPadded = [...Array(histDates.length).fill(null), ...predTemps];
+
+                // Global Chart Defaults
+                Chart.defaults.color = '#94a3b8';
+                Chart.defaults.borderColor = '#334155';
+                Chart.defaults.font.family = "'Outfit', sans-serif";
 
                 new Chart(ctx, {
                     type: 'line',
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Historical Temperature (°C)',
+                            label: 'Historical Temp (°C)',
                             data: histDataPadded,
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            tension: 0.1
+                            borderColor: '#10b981', // Emerald 500
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: true,
+                            pointRadius: 0
                         }, {
-                            label: 'Predicted Temperature (°C)',
+                            label: 'Predicted Temp (°C)',
                             data: predDataPadded,
-                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderColor: '#ef4444', // Red 500
                             borderDash: [5, 5],
-                            tension: 0.1
+                            borderWidth: 2,
+                            tension: 0.3,
+                            pointRadius: 0
                         }]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
                         plugins: {
-                            title: {
-                                display: true,
-                                text: 'Temperature Trends & Forecast'
+                            legend: {
+                                position: 'top',
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                                titleColor: '#f8fafc',
+                                bodyColor: '#f8fafc',
+                                borderColor: '#334155',
+                                borderWidth: 1,
+                                padding: 10
+                            }
+                        },
+                        scales: {
+                            y: {
+                                grid: {
+                                    color: '#334155'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Temperature (°C)'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    display: false
+                                }
                             }
                         }
                     }
                 });
+            })
+            .catch(err => {
+                console.error("Error loading climate data:", err);
+                // Ideally show an error state in the UI
             });
     });
 </script>

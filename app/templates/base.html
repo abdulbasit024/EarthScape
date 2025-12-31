@@ -3,35 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - EarthScape Climate Agency</title>
+    <title>{{ title }} - EarthScape</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <!-- Add Chart.js for later -->
+    
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <nav>
-        <div class="logo">EarthScape</div>
-        <ul>
-            <li><a href="{{ url_for('main.index') }}">Home</a></li>
-            {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-            {% else %}
-                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-            {% endif %}
-        </ul>
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">
+                EarthScape
+            </a>
+            <ul>
+                {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('main.index') }}" class="nav-link">Dashboard</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}" class="nav-link">Logout</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('auth.login') }}" class="nav-link">Login</a></li>
+                    <li><a href="{{ url_for('auth.register') }}" class="nav-link btn btn-primary">Get Started</a></li>
+                {% endif %}
+            </ul>
+        </div>
     </nav>
+
     <div class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class="flashes">
                 {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <li class="flash-message">{{ message }}</li>
                 {% endfor %}
                 </ul>
             {% endif %}
         {% endwith %}
+        
         {% block content %}{% endblock %}
     </div>
+
+    <footer>
+        <p>&copy; 2024 EarthScape Climate Agency. All rights reserved.</p>
+    </footer>
 </body>
 </html>

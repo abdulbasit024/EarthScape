@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Register</h2>
-<form action="" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="username" required>
+<div class="auth-container">
+    <div class="card">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Join EarthScape</h2>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Account" class="btn btn-primary" style="width: 100%;">
+            </div>
+            <p style="text-align: center; color: var(--text-secondary);">
+                Already have an account? <a href="{{ url_for('auth.login') }}">Sign in</a>
+            </p>
+        </form>
     </div>
-    <div>
-        <label>Email:</label>
-        <input type="email" name="email" required>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-    </div>
-    <div>
-        <label>Role:</label>
-        <select name="role">
-            <option value="analyst">Analyst</option>
-            <option value="admin">Admin</option>
-        </select>
-    </div>
-    <div>
-        <input type="submit" value="Register">
-    </div>
-</form>
+</div>
 {% endblock %}
