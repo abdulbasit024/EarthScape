@@ -20,9 +20,8 @@ def create_app(config_class=Config):
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
 
-    # Create database tables automatically in development mode
-    if app.debug:
-        with app.app_context():
-            db.create_all()
+    # Create database tables automatically
+    with app.app_context():
+        db.create_all()
 
     return app
